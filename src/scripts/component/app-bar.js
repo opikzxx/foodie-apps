@@ -9,6 +9,9 @@ class AppBar extends HTMLElement {
       <div class="app-bar__brand">
         <img src="https://i.imgur.com/kTEdn4u.png" alt="Foodie" />
       </div>
+      <div class="app-bar__menu">
+        <button id="hamburgerButton">☰</button>
+      </div>
       <nav id="navigationDrawer" class="app-bar__navigation">
         <ul>
           <li><a href="#/home">Home</a></li>
@@ -16,9 +19,6 @@ class AppBar extends HTMLElement {
           <li><a href="https://www.linkedin.com/in/muhammad-taufik-heryunanto-103223244/">About Us</a></li>
         </ul>
       </nav>
-      <div class="app-bar__menu">
-        <button id="hamburgerButton">☰</button>
-      </div>
     </header>
         `;
   }
