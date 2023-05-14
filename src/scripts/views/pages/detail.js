@@ -40,9 +40,9 @@ const Detail = {
       });
     } catch (error) {
       console.log(error);
+      restaurantContainer.innerHTML = '<p>Failed to fetch data. Please try again later.</p>';
     } finally {
       spinner.stop();
-      restaurantContainer.innerHTML = '<p>Failed to fetch data. Please try again later.</p>';
     }
 
     const formReview = document.querySelector('.post-review');
@@ -69,6 +69,7 @@ const Detail = {
         this.afterRender(responseJson);
       } catch (error) {
         console.log(error);
+        restaurantContainer.innerHTML = '<p>Failed to fetch data. Please try again later.</p>';
       } finally {
         spinner.stop();
       }
