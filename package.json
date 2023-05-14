@@ -1,12 +1,12 @@
 {
-  "name": "movie-catalogue-lite",
+  "name": "foodie-apps-lite",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "serve": "http-server dist --port 8080",
+    "serve": "http-server dist --port 9000",
     "build-serve": "npm run build && npm run serve"
   },
   "keywords": [],
@@ -35,6 +35,7 @@
   "dependencies": {
     "idb": "^7.0.1",
     "regenerator-runtime": "^0.13.9",
+    "spin.js": "^4.1.1",
     "workbox-routing": "^6.5.4",
     "workbox-strategies": "^6.5.4",
     "workbox-window": "^6.5.3"

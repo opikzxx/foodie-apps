@@ -1,6 +1,12 @@
 // import { library, icon } from '@fontawesome/fontawesome-svg-core';
+import { Spinner } from 'spin.js';
 import DbSource from '../../data/restaurantdb-source';
 import { createResItemTemplate } from '../templates/template-creator';
+
+const spinnerOptions = {
+  lines: 10, length: 6, width: 3, radius: 10, color: '#000000',
+};
+const spinner = new Spinner(spinnerOptions);
 
 const Home = {
   async render() {
@@ -92,6 +98,8 @@ form > .button:hover {
       const inputQuery = document.getElementById('name').value;
 
       try {
+        spinner.spin(document.getElementById('spinner-container'));
+
         const url = `https://restaurant-api.dicoding.dev/search?q=${inputQuery}`;
         const response = await fetch(url);
 
@@ -101,8 +109,11 @@ form > .button:hover {
         responseJson.restaurants.forEach((restaurant) => {
           searchRestaurantContainer.innerHTML += createResItemTemplate(restaurant);
         });
+
+        spinner.stop();
       } catch (error) {
         console.log(error);
+        spinner.stop();
       }
     });
   },
