@@ -114,6 +114,7 @@ form > .button:hover {
       } catch (error) {
         console.log(error);
         spinner.stop();
+        restaurantContainer.innerHTML = '<p>Failed to fetch data. Please try again later.</p>';
       }
     });
   },
