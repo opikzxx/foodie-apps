@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+const assert = require('assert');
+
 Feature('Liking Restaurants');
 
 Before(({ I }) => {
@@ -19,7 +22,6 @@ Scenario('like one restaurant', ({ I }) => {
 
   I.amOnPage('/');
   I.wait(1);
-  I.scrollTo('.product-card');
 
   I.seeElement('.product-card');
   I.wait(1);
@@ -31,4 +33,47 @@ Scenario('like one restaurant', ({ I }) => {
 
   I.amOnPage('/#/like');
   I.seeElement('.product-card');
+});
+
+Scenario('unlike one restaurant', ({ I }) => {
+  I.see(
+    'Tidak ada restaurant untuk ditampilkan',
+    '.restaurant-item__not__found',
+  );
+
+  I.amOnPage('/');
+  I.wait(1);
+
+  I.seeElement('.product-card');
+  I.wait(1);
+  I.click(locate('.product-card').first());
+  I.wait(1);
+
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/like');
+  I.seeElement('.product-card');
+  I.click(locate('.product-card').first());
+  I.wait(1);
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/like');
+  I.see(
+    'Tidak ada restaurant untuk ditampilkan',
+    '.restaurant-item__not__found',
+  );
+});
+
+Scenario('Pencarian restoran dengan kata kunci', async ({ I }) => {
+  I.amOnPage('/');
+
+  const expectedValue = 'MELTING POT';
+
+  await I.fillField('#name', expectedValue);
+  await I.click('.button');
+  const actualValue = await I.grabTextFrom(locate('.product-card h2').first());
+
+  assert.strictEqual(actualValue, expectedValue);
 });

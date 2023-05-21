@@ -31,7 +31,7 @@ const createResDetailTemplate = (restaurant) => `
     <img src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name} ">
   </div>
   <div class="product-description">
-    <h2 style="text-transform: uppercase;">${restaurant.name} </h2>
+    <h2 style="text-transform: uppercase;" class="titile_restaurant">${restaurant.name} </h2>
     <span class="hint-star">
     ${'★'.repeat(Math.floor(restaurant.rating))}${'☆'.repeat(5 - Math.floor(restaurant.rating))} 
     </span>
