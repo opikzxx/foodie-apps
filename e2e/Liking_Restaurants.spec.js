@@ -77,3 +77,25 @@ Scenario('Pencarian restoran dengan kata kunci', async ({ I }) => {
 
   assert.strictEqual(actualValue, expectedValue);
 });
+
+Scenario('Posting review untuk restoran', async ({ I }) => {
+  const review = {
+    name: 'John Doe',
+    review: 'This restaurant has great food!',
+  };
+
+  I.amOnPage('/');
+  I.wait(1);
+
+  I.seeElement('.product-card');
+  I.wait(1);
+  I.click(locate('.product-card').first());
+  I.wait(1);
+
+  I.fillField('input#name', review.name);
+  I.fillField('textarea#review', review.review);
+  I.click('Submit');
+
+  I.see(review.name);
+  I.see(review.review);
+});

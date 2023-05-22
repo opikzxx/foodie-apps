@@ -9,7 +9,8 @@
     "serve": "http-server dist --port 9000",
     "build-serve": "npm run build && npm run serve",
     "test": "karma start",
-    "e2e": "codeceptjs run --steps"
+    "e2e": "codeceptjs run --steps",
+    "build-image": "node sharp.js"
   },
   "keywords": [],
   "author": "your_name <your_email@gmail.com>",
@@ -27,6 +28,8 @@
     "eslint-plugin-import": "^2.26.0",
     "html-webpack-plugin": "^5.5.0",
     "http-server": "^14.1.1",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
     "jasmine-ajax": "^4.0.0",
     "jasmine-core": "^5.0.0",
     "karma": "^6.4.2",
@@ -36,6 +39,7 @@
     "karma-sourcemap-loader": "^0.4.0",
     "karma-webpack": "^5.0.0",
     "puppeteer": "^20.2.1",
+    "sharp": "^0.32.1",
     "style-loader": "^3.3.1",
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0",

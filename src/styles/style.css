@@ -87,24 +87,30 @@ body {
  * Jumbotron
  */
 
- .hero {
+.hero {
+  position: relative;
   display: flex;
   align-items: center;
-  min-height: 450px;
   width: 100%;
-  text-align: center;
-  background-image: url("../public/hero-image_2.jpg");
-  background-position: center;
-  background-color: green;
-  background-size: cover;
+  justify-content: center;
+
+}
+.hero .bg img{
+  width: 100%;
+  /* min-height: 325px; */
 }
 
+.bg {
+  background-size: cover;
+  width: 100%;
+}
 
 .hero__inner {
   margin: 0 auto;
   max-width: 800px;
   background-color: rgba(45, 45, 45, 0.5);
-  padding: 15px 15px 25px 15px;
+  padding: 15px;
+  position: absolute;
 }
 
 .hero__tagline {
@@ -113,6 +119,7 @@ body {
   font-size: 18px;
   font-weight: 300;
 }
+
 
 /*
   Main Content
