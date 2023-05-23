@@ -5,11 +5,7 @@ class AppFooter extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <footer>
-      <div class="wrapper">
-        <small>&copy;2023 <strong>Foodie Apps</strong>, All Rights Reserved</small>
-      </div>
-    </footer>
+        <p>&copy;2023 Foodie Apps, All Rights Reserved</p>
           `;
   }
 }

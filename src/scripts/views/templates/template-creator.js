@@ -31,7 +31,7 @@ const createResDetailTemplate = (restaurant) => `
     <img src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name} ">
   </div>
   <div class="product-description">
-    <h2 style="text-transform: uppercase;">${restaurant.name} </h2>
+    <h2 style="text-transform: uppercase;" class="titile_restaurant">${restaurant.name} </h2>
     <span class="hint-star">
     ${'★'.repeat(Math.floor(restaurant.rating))}${'☆'.repeat(5 - Math.floor(restaurant.rating))} 
     </span>
@@ -69,7 +69,7 @@ const createResItemTemplate = (restaurants) => `
 <a href="/#/detail/${restaurants.id}" class="product-card">
   <div class="badge">${restaurants.city}</div>
   <div class="product-tumb">
-    <img src="${CONFIG.BASE_IMAGE_URL}${restaurants.pictureId}" alt="${restaurants.name}">
+    <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL}${restaurants.pictureId}" alt="${restaurants.name}">
   </div>
   <div class="product-details">
     <span class="hint-star">
@@ -82,13 +82,13 @@ const createResItemTemplate = (restaurants) => `
 `;
 
 const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
+  <button aria-label="like this restaurant" id="likeButton" class="like">
     <h1>♡</h1>
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+const createUnlikeButtonTemplate = () => `
+  <button aria-label="unlike this restaurant" id="likeButton" class="like">
     <h1>♥</h1>
   </button>
 `;
@@ -97,5 +97,5 @@ export {
   createResItemTemplate,
   createResDetailTemplate,
   createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createUnlikeButtonTemplate,
 };
