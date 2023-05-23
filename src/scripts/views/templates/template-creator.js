@@ -69,7 +69,7 @@ const createResItemTemplate = (restaurants) => `
 <a href="/#/detail/${restaurants.id}" class="product-card">
   <div class="badge">${restaurants.city}</div>
   <div class="product-tumb">
-    <img src="${CONFIG.BASE_IMAGE_URL}${restaurants.pictureId}" alt="${restaurants.name}">
+    <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL}${restaurants.pictureId}" alt="${restaurants.name}">
   </div>
   <div class="product-details">
     <span class="hint-star">

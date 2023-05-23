@@ -53,41 +53,27 @@ class AppHome extends HTMLElement {
   form > .button:hover {
     background-color: #FFA559;
   }
-  .hero-element .container .bg picture {
-    width: max-content;
-  }
-  .hero-element .container .bg {
-    overflow: hidden;
-    background-size: cover;
-  }
-  .hero-element .container .bg img {
-    width: 100%;
-    height: 550px;
-    object-fit: cover;
-  }
-  
-  .hero__head{
-    color:white;
-    text-align: center;
-  }
   
       </style>
-      <div class="hero">
-      <div class="bg">
-      <picture>
-          <source media="(max-width: 600px)" srcset="./heros/hero-image-small.jpg">
-          <img src="./heros/hero-image-large.jpg" alt="Hero Banner"/>
-        </picture>
-        </div>
+      <div class="hero-jumbtron">
       <div class="hero__inner">
-        <h1 class="hero__head">Explore Your Restaurant</h1>
-        <p class="hero__tagline">Temukan Kenikmatan Kuliner yang Tidak Terlupakan</p>
-        <form method="post" class="search">
-          <input type="text" class="textbox" placeholder="Search Restaurant" id="name" alt="Search Restaurant">
-          <button class="button">🔎︎</button>
-        </form>
+      <h1 class="hero__head">Explore Your Restaurant</h1>
+      <p class="hero__tagline">Temukan Kenikmatan Kuliner yang Tidak Terlupakan</p>
+      <form method="post" class="search">
+        <input type="text" class="textbox" placeholder="Search Restaurant" id="name" alt="Search Restaurant">
+        <button class="button">🔎︎</button>
+      </form>
+    </div>
+      <div class="container">
+        <div class="bg">
+        <picture>
+            <source media="(max-width: 600px)" type="image/jpeg" class="lazyload" srcset="./heros/hero-image-small.jpg">
+            <img class="lazyload" src="./heros/hero-image-large.jpg" alt="Hero Banner"/>
+          </picture>
+        </div>
       </div>
     </div>
+
         <section class="content">
         <div class="latest">
           <h2 class="hero__title">Explore Restaurants</h2>

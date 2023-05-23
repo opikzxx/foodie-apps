@@ -10,7 +10,7 @@ if (!fs.existsSync(destination)) {
 }
 
 fs.readdirSync(target).forEach((image) => {
-  // mengubah ukuran gambar dengan lebar 800px, dengan prefix -large.jpg
+  // mengubah ukuran gambar dengan lebar 480px, dengan prefix -small.jpg
   sharp(`${target}/${image}`)
     .resize(700)
     .toFile(
