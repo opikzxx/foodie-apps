@@ -7,7 +7,7 @@ class AppBar extends HTMLElement {
     this.innerHTML = `
       <header class="app-bar">
       <div class="app-bar__brand">
-        <img src="https://i.imgur.com/kTEdn4u.png" alt="Foodie" />
+        <img class="lazyload" src="https://i.imgur.com/kTEdn4u.png" alt="Foodie" />
       </div>
       <div class="app-bar__menu">
         <button id="hamburgerButton">☰</button>

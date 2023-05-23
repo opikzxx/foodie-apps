@@ -54,21 +54,26 @@ class AppHome extends HTMLElement {
     background-color: #FFA559;
   }
   
-  .hero__head{
-    color:white;
-  }
       </style>
-      <div class="hero">
-        <div class="hero__inner">
-          <h1 class="hero__head">Explore Your Restaurant</h1>
-          <p class="hero__tagline">Temukan Kenikmatan Kuliner yang Tidak Terlupakan</p>
-          <form method="post" class="search">
-            <input type="text" class="textbox" placeholder="Search Restaurant" id="name" alt="Search Restaurant">
-            <button class="button">🔎︎</button>
-          </form>
+      <div class="hero-jumbtron">
+      <div class="hero__inner">
+      <h1 class="hero__head">Explore Your Restaurant</h1>
+      <p class="hero__tagline">Temukan Kenikmatan Kuliner yang Tidak Terlupakan</p>
+      <form method="post" class="search">
+        <input type="text" class="textbox" placeholder="Search Restaurant" id="name" alt="Search Restaurant">
+        <button class="button">🔎︎</button>
+      </form>
+    </div>
+      <div class="container">
+        <div class="bg">
+        <picture>
+            <source media="(max-width: 600px)" type="image/jpeg" class="lazyload" srcset="./heros/hero-image-small.jpg">
+            <img class="lazyload" src="./heros/hero-image-large.jpg" alt="Hero Banner"/>
+          </picture>
         </div>
       </div>
-  
+    </div>
+
         <section class="content">
         <div class="latest">
           <h2 class="hero__title">Explore Restaurants</h2>
@@ -78,5 +83,4 @@ class AppHome extends HTMLElement {
             `;
   }
 }
-
 customElements.define('app-home', AppHome);

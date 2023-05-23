@@ -1,11 +1,5 @@
-import { Spinner } from 'spin.js';
-import FavoriteMovieIdb from '../../data/favorite-restaurant-idb';
+import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 import { createResItemTemplate } from '../templates/template-creator';
-
-const spinnerOptions = {
-  lines: 10, length: 6, width: 3, radius: 10, color: '#000000',
-};
-const spinner = new Spinner(spinnerOptions);
 
 const Like = {
   async render() {
@@ -20,22 +14,15 @@ const Like = {
   },
 
   async afterRender() {
-    const restaurantContainer = document.querySelector('#product-card');
+    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+    const restaurantsContainer = document.querySelector('#product-card');
 
-    try {
-      spinner.spin(restaurantContainer);
-
-      const restaurants = await FavoriteMovieIdb.getAllRestaurants();
-      console.log(restaurants);
-      restaurantContainer.innerHTML = ''; // Menghapus konten sebelum menambahkan data baru
+    if (restaurants.length) {
       restaurants.forEach((restaurant) => {
-        restaurantContainer.innerHTML += createResItemTemplate(restaurant);
+        restaurantsContainer.innerHTML += createResItemTemplate(restaurant);
       });
-    } catch (error) {
-      console.log(error);
-      restaurantContainer.innerHTML = '<p>Failed to fetch data. Please try again later.</p>';
-    } finally {
-      spinner.stop();
+    } else {
+      restaurantsContainer.innerHTML += '<div class="restaurant-item__not__found">Tidak ada restaurant untuk ditampilkan</div>';
     }
   },
 };
