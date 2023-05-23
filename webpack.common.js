@@ -77,7 +77,7 @@ module.exports = {
       ],
     }),
     new BundleAnalyzerPlugin({
-      openAnalyzer: false;
+      openAnalyzer: false,
     }),
   ],
 };
